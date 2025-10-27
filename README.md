@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kinley Wangmo | Personal Photography Portfolio
 
 ##  Project Overview
@@ -45,3 +46,6 @@ Passionate about photography, storytelling, and creative web design.
 
 ##  Acknowledgment
 Grateful to my instructor and classmates for feedback and guidance throughout the project.
+=======
+# Phase2_Portfolio
+>>>>>>> 01f07b2a0f87b503f22834ec597b7578f7316c21
