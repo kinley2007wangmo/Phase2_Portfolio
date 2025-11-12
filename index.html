@@ -4,22 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kinley Wangmo | Photographer Portfolio</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Enable Tailwind dark-mode */
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
+    body { font-family: "Poppins", sans-serif; }
   </style>
 </head>
-<body class="bg-purple-50 text-gray-800">
 
-  <!-- ===== Navbar ===== -->
-  <header class="flex justify-between items-center bg-gray-900 text-white px-10 py-4 shadow-md">
+<body class="bg-purple-50 text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-500">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="flex justify-between items-center bg-gray-900 dark:bg-gray-800 text-white px-6 md:px-10 py-4 shadow-md fixed w-full top-0 z-50">
     <div class="flex items-center gap-3">
       <img src="your-photo.jpg" alt="Kinley Wangmo" class="w-9 h-9 rounded-full object-cover">
       <span class="font-semibold text-lg">Kinley Wangmo</span>
     </div>
-    <nav class="flex items-center gap-6 text-base">
+
+    <!-- Mobile button -->
+    <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
+
+    <!-- Desktop menu -->
+    <nav id="menu" class="hidden md:flex items-center gap-6 text-base">
       <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
       <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
       <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
@@ -27,107 +38,124 @@
     </nav>
   </header>
 
-<!-- ===== Home Section (Exact Figma Style) ===== -->
-<section id="home" class="flex flex-row justify-between items-center bg-white py-20 px-16">
-  <!-- Left content -->
-  <div class="w-1/2 space-y-8">
-    <h1 class="text-4xl font-semibold text-gray-900 leading-snug">
-      Capturing moments through my 
-      <span class="text-purple-500 underline">lens</span> — 
-      blending creativity, light, and storytelling.
-    </h1>
+  <!-- ===== HOME ===== -->
+  <section id="home" class="flex flex-col md:flex-row items-center justify-between pt-28 md:pt-36 pb-16 px-6 md:px-16 gap-10 text-center md:text-left bg-white dark:bg-gray-800">
+    <div class="md:w-1/2 space-y-8">
+      <h1 class="text-4xl md:text-5xl font-semibold leading-snug">
+        Capturing moments through my <span class="text-purple-500 underline">lens</span> — blending creativity, light, and storytelling.
+      </h1>
 
-    <div class="flex items-start">
-      <div class="border-l-4 border-purple-400 h-auto mr-4"></div>
-      <p class="text-gray-600 text-lg max-w-md">
-        I’m a photographer passionate about turning everyday scenes into stunning visual stories.
-      </p>
+      <div class="flex md:flex-row flex-col items-center md:items-start gap-4">
+        <div class="border-l-4 border-purple-400 h-12 hidden md:block"></div>
+        <p class="text-gray-600 dark:text-gray-300 text-lg max-w-md">
+          I’m a photographer passionate about turning everyday scenes into stunning visual stories.
+        </p>
+      </div>
+
+      <a href="#contact" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-md inline-block shadow-md transition-all">
+        Contact Me
+      </a>
     </div>
 
-    <a href="#contact" 
-       class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-md inline-block shadow-md transition-all">
-       Contact me
-    </a>
-  </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="your-photo.jpg" alt="Kinley Wangmo" loading="lazy"
+           class="rounded-full border-4 border-purple-300 w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 object-cover shadow-lg transition-all duration-500">
+    </div>
+  </section>
 
-  <!-- Right image -->
-  <div class="w-1/2 flex justify-center">
-    <img src="your-photo.jpg" 
-         alt="Kinley Wangmo" 
-         class="rounded-full border-4 border-purple-300 w-80 h-80 object-cover shadow-md">
-  </div>
-</section>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="px-6 md:px-20 py-20 text-center md:text-left bg-white dark:bg-gray-800 transition-colors">
+    <h2 class="text-3xl font-semibold text-purple-600 mb-8 border-b-4 border-purple-200 pb-2 w-fit mx-auto md:mx-0">About Me</h2>
 
-  <!-- ===== About Section ===== -->
-  <section id="about" class="px-8 md:px-20 py-20">
-    <h2 class="text-3xl font-semibold text-purple-600 mb-8 border-b-4 border-purple-200 pb-2 w-fit">About Me</h2>
-    <p class="text-gray-700 text-lg leading-relaxed mb-4 md:w-5/6">
+    <p class="text-lg leading-relaxed mb-4 md:w-5/6 mx-auto md:mx-0">
       I’m <strong>Kinley Wangmo</strong>, a passionate photographer and a 
       <strong>Software Engineering student at the College of Science and Technology</strong>. 
-      My photography focuses on capturing natural emotions, soft tones, and authentic visual storytelling inspired by everyday life.
+      My photography focuses on capturing natural emotions, soft tones, and authentic storytelling inspired by everyday life.
     </p>
-    <p class="text-gray-700 text-lg leading-relaxed mb-8 md:w-5/6">
-      After completing Class 12 in 2024 and attending a photography workshop in 2025, I developed 
-      skills in creative lighting and portrait techniques. Now, I’m combining my artistic vision 
-      with digital design and web development to build a strong personal photography brand and 
-      share my stories through technology.
+
+    <p class="text-lg leading-relaxed mb-8 md:w-5/6 mx-auto md:mx-0">
+      After completing Class 12 in 2024 and attending a photography workshop in 2025, I developed skills in creative lighting and portrait techniques.  
+      Now I’m combining my artistic vision with digital design and web development to build a personal photography brand.
     </p>
 
     <h3 class="text-2xl font-semibold text-purple-600 mb-4">Skills ✨🎨💻</h3>
-    <ul class="list-disc list-inside space-y-1 text-gray-700 text-lg">
+    <ul class="list-disc list-inside space-y-1 text-lg text-left md:pl-0 pl-5">
       <li>Portrait & Event Photography</li>
       <li>Creative Lighting & Composition</li>
       <li>Photo Editing (Lightroom / Photoshop)</li>
       <li>Visual Storytelling & Aesthetic Design</li>
-      <li>Web Design Fundamentals (HTML, Tailwind CSS, Figma)</li>
+      <li>Web Design (HTML, Tailwind CSS, Figma)</li>
       <li>Digital Branding & Portfolio Development</li>
     </ul>
 
     <h3 class="text-2xl font-semibold text-purple-600 mt-10 mb-4">Experience 📸</h3>
-    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+    <ul class="list-disc list-inside space-y-2 text-lg text-left md:pl-0 pl-5">
       <li><strong>2025 –</strong> Photography Workshop, Thimphu → Learned advanced camera settings and creative lighting techniques.</li>
-      <li><strong>2024 –</strong> Completed Class 12 → Discovered a strong passion for visual storytelling and artistic composition.</li>
-      <li><strong>Ongoing –</strong> Personal Photography Projects → Exploring portraits, nature, and fashion photography while building a personal brand.</li>
+      <li><strong>2024 –</strong> Completed Class 12 → Discovered a strong passion for storytelling and artistic composition.</li>
+      <li><strong>Ongoing –</strong> Personal Photography Projects → Exploring portraits, nature and fashion photography while building a personal brand.</li>
     </ul>
   </section>
 
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="bg-purple-100 px-8 md:px-20 py-20">
-    <h2 class="text-3xl font-semibold text-purple-600 mb-8 border-b-4 border-purple-200 pb-2 w-fit">Get In Touch</h2>
-    <p class="text-gray-700 text-lg mb-10 md:w-3/4 leading-relaxed">
-      I’d love to hear from you! Whether you’re interested in photography sessions, creative collaborations, 
-      or just want to say hello — feel free to reach out below.
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="bg-purple-100 dark:bg-gray-800 px-6 md:px-20 py-20 text-center md:text-left transition-colors">
+    <h2 class="text-3xl font-semibold text-purple-600 mb-8 border-b-4 border-purple-200 pb-2 w-fit mx-auto md:mx-0">Get In Touch</h2>
+    <p class="text-lg mb-10 md:w-3/4 leading-relaxed mx-auto md:mx-0">
+      I’d love to hear from you! Whether you’re interested in sessions, collaborations or just want to say hello — reach out below.
     </p>
 
-    <form class="flex flex-col gap-5 w-full md:w-2/3">
+    <form class="flex flex-col gap-5 w-full sm:w-4/5 md:w-2/3 mx-auto md:mx-0">
       <div>
-        <label class="block font-medium mb-1 text-gray-700">Email</label>
+        <label class="block font-medium mb-1">Email</label>
         <input type="email" placeholder="Please enter your email" required
-               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none">
+               class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none dark:bg-gray-700">
       </div>
-
       <div>
-        <label class="block font-medium mb-1 text-gray-700">Mobile</label>
+        <label class="block font-medium mb-1">Mobile</label>
         <input type="tel" placeholder="Enter mobile" required
-               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none">
+               class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none dark:bg-gray-700">
       </div>
-
       <div>
-        <label class="block font-medium mb-1 text-gray-700">Message</label>
+        <label class="block font-medium mb-1">Message</label>
         <textarea placeholder="Enter your message" rows="4"
-                  class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none"></textarea>
+                  class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 focus:ring-2 focus:ring-purple-300 outline-none dark:bg-gray-700"></textarea>
       </div>
 
-      <button type="submit" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-md w-fit transition-colors">
+      <button type="submit" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-md w-fit transition-colors self-center md:self-start">
         Submit
       </button>
     </form>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer class="bg-gray-900 text-white text-center py-4 mt-10">
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-900 dark:bg-gray-800 text-white text-center py-4 mt-10">
     <p>© 2025 Kinley Wangmo | All rights reserved.</p>
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    /* Mobile menu toggle */
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+    /* 🌙 Dark-mode toggle button */
+    const toggle = document.createElement("button");
+    toggle.id = "theme-toggle";
+    toggle.textContent = "🌙";
+    toggle.className =
+      "fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full shadow-lg transition-colors z-50";
+    document.body.appendChild(toggle);
+
+    /* Load + Save theme preference */
+    const html = document.documentElement;
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") html.classList.add("dark");
+
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      const theme = html.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    });
+  </script>
 </body>
 </html>
